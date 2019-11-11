@@ -1,0 +1,32 @@
+{
+  "name": "hapi-type-project",
+  "version": "1.0.0",
+  "description": "hapi for tyep",
+  "main": "index.js",
+  "author": "wnn",
+  "license": "MIT",
+  "scripts": {
+    "build-ts": "tsc",
+    "start": "node dist/src/index.js",
+    "nodemon:build": "nodemon --exec ./node_modules/.bin/ts-node ./src/index.ts",
+    "nodemon:start": "yarn run nodemon:build",
+    "format:lint": "./node_modules/.bin/tslint -c tslint.json 'src/**/*.ts'",
+    "format:prettier": "./node_modules/.bin/prettier --tab-width 4 --print-width 120 --single-quote --trailing-comma all --write 'src/**/*.ts'",
+    "test": "NODE_ENV=test nyc --reporter=lcov -r tsconfig-paths/register -r ts-node/register tape test/**/*.spec.{ts,js} | tap-spec",
+    "postinstall": "npm run build-ts"
+  },
+  "dependencies": {
+    "@hapi/hapi": "^18.4.0",
+    "dotenv": "^8.2.0",
+    "hapi": "^18.1.0",
+    "typescript": "^3.7.2"
+  },
+  "devDependencies": {
+    "@types/hapi__hapi": "^18.2.6",
+    "@types/node": "^12.12.7",
+    "nodemon": "^1.19.4",
+    "prettier": "^1.19.1",
+    "ts-node": "^8.5.0",
+    "tslint": "^5.20.1"
+  }
+}
