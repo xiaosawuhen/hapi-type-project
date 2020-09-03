@@ -16,7 +16,7 @@
     "postinstall": "npm run build-ts"
   },
   "dependencies": {
-    "@hapi/hapi": "^18.4.0",
+    "@hapi/hapi": "^19.1.1",
     "dotenv": "^8.2.0",
     "hapi": "^18.1.0",
     "typescript": "^3.7.2"
